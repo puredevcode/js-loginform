@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewpoint">
+        <title>Newuser page</title>
+    <style >
+            
+            body {
+                background-color: aliceblue;
+                font-family:inherit, sans-serif;
+                text-align:center;
+            }
+            input {
+                width:auto;
+                padding: inherit;
+             }
+            .kodu { 
+                border: 1px solid black;
+                margin: 100px 500px 100px 500px;
+                background-color: burlywood;
+                
+              
+        }
+        </style>
+         <script>
+		function validate(){  
+			var name    = document.getElementById("name").value;
+			var email   = document.getElementById("email").value;
+			var pass    = document.getElementById("pwd").value;
+
+			var p_name  = /[A-za-z]/i;
+			var p_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i;
+			var p_pwd   = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+			
+			//var p_pwd =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+			//alert(`${name},${email},${pass}`)
+			
+			if(p_name.test(name)){
+				if(p_email.test(email)){
+					if(p_pwd.test(pass)){
+						alert("Successfull");
+					}else{
+						alert("Invalid password");
+					}
+				}else{
+					alert("Invalid email");
+				}
+			}else{
+				alert("Invalid First name");
+			}
+		}
+        </script>
+    </head>
+    
+    
+    
+    
+    
+    <body style="background-color:bisque;">
+       
+        <div class="kodu">
+       	<form>
+            
+                
+            <h2> LOGIN FORM</h2>    
+            <b>Name</b><br>
+                <input type="text" id = "name" value=""><br><br>
+            <b>Email</b><br>
+                <input type="text" id = "email" value=""><br><br>
+            <b>Password</b><br>
+                <input type="Password" id = "pwd" value=""><br><br>
+                <button onclick="validate()">sumbit</button><br><br>
+            not registered ?<br><br>
+                <button onclick="document.location='">sign in</button><br><br>
+                
+            
+            </form>
+        </div>
+       
+            
+               
+               
+     
+        
+        
+    </body>
+
+
+
+
+
+
+</html>
